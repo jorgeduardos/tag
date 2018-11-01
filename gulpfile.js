@@ -103,6 +103,7 @@ gulp.task('scripts', function() {
 
 gulp.task('templates', function() {
     return gulp.src('dev/templates/**/*.html') // run the Twig template parser on all .html files in the "src" directory
+        .pipe(plumber())
         .pipe(twig())
         .pipe(gulp.dest(pathToCms.html)) // output the rendered HTML files to the "dist" directory
         .pipe(browserSync.reload({

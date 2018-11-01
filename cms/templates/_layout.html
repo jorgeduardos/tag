@@ -1,13 +1,4 @@
-{#
-# Layout template
-# ---------------
-#
-# This template defines your site’s global layout. It can be
-# “extended” by other templates to fill in the gaps.
-#
-# See Twig’s Template Inheritance documentation for more details:
-# http://twig.sensiolabs.org/doc/templates.html#template-inheritance
-#}
+
 
 
 <!DOCTYPE html>
@@ -19,11 +10,22 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" {%if siteUrl %} href="{{alias('@assetBasePath')}}/css/main.css" {% else %} href="../web/assets/css/main.css"{% endif %}>
+	<link rel="stylesheet"  href="../web/assets/css/main.css">
 </head>
 <body>
-	{% block content %}
-    {% endblock %}
-	<script {%if siteUrl %} src="{{alias('@assetBasePath')}}/js/main.js" {% else %} src="../web/assets/js/main.js"{% endif %}></script>
+	<nav class="main-nav">
+	<div class="container">
+		<ul>
+			<li><a class="active" href="">Home</a></li>
+			<li><a href="">What we do</a></li>
+			<li><a href="">Expertise</a></li>
+			<li><a href="">Consultants</a></li>
+			<li><a href="">Insights</a></li>
+			<li><a href="">About</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+	</div>
+</nav>
+	    	<script  src="../web/assets/js/main.js"></script>
 </body>
 </html>
