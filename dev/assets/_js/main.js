@@ -8,8 +8,22 @@ import Foundation from 'foundation-sites';
 // import JS files here using ES6 import statement
 import slick from 'slick-carousel';
 import countUp from 'countup.js'; 
+import waypoint from '../../../node_modules/waypoints/lib/noframework.waypoints';
 
 $(document).foundation()
+
+//waypoint animations
+
+var menuWaypoint = new Waypoint({
+  element: document.getElementById('about'),
+  handler: function(direction) {
+    $('#hamburger').toggleClass('visibleA');
+  },
+  offset: 200 
+})
+
+
+
 
 // nav
 
@@ -56,7 +70,7 @@ $('#sliderClient').slick({
   infinite: true,
   arrows: false,
   fade: true,
-  autoplay: false,
+  autoplay: true,
   autoplaySpeed: 2000
 });
 

@@ -15,14 +15,33 @@ $icon-afterHeight: 3px;
 $icon-afterWidth: 17px;
 $icon-afterTop: 10px;
 
-
-.btn1{
+.menuButton-container{
   position: fixed;
   z-index: 999;
-  width: 34px;
-  height: 25px;
   top: $btnTop;
   right: $btnRight;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes menuVisible{
+  to{
+    background-color: rgba(88,89,91, 1);
+  }
+}
+
+.menuButton-container.visibleA{
+  animation: menuVisible 0.5s ease forwards;
+}
+
+.btn1{
+  width: 34px;
+  height: 25px;
   transition-duration: 0.5s;
   
   .icon-left {
@@ -31,7 +50,7 @@ $icon-afterTop: 10px;
     height: $iconHeight;
     width: $iconWidth;
     top: 11px;
-  background-color: $color;
+    background-color: $color;
     left: 0px; 
     
     &:before{
