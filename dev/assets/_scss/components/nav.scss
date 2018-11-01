@@ -1,3 +1,5 @@
+// nav
+
 .main-nav{
 	width: 50vw;
 	height: 100vh;
@@ -10,6 +12,13 @@
 	display: flex;
 	justify-content: flex-end;
 	align-content: center;
+	transform: translateX(100%);
+	&.open{
+		animation: openNav 0.7s ease forwards;
+	}
+	&.close{
+		animation: closeNav 0.7s ease forwards;
+	}
 	.container{
 		padding-right: 3rem;
 	}
@@ -49,4 +58,51 @@
 			}
 		}
 	}
+	@media (max-width: 650px) {
+		width: 100vw;
+		justify-content: center;
+		ul{
+			text-align: center;
+			li{
+				margin: 10px;
+				a:before{
+					top: initial;
+					bottom: -5px;
+					width: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
 }
+
+//nav animaions;
+
+@keyframes openNav{
+	to{
+		transform: translateX(0%);
+	}
+}
+
+@keyframes closeNav{
+	from{
+		transform: translateX(0%);
+	}
+	to{
+		transform: translateX(100%);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

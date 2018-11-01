@@ -1,0 +1,74 @@
+.footer{
+	background-color: #58595b;
+	padding-top: $sectionPadding;
+	color: white;
+	a{
+		color: white;
+	}
+	h6{
+		color: #999999;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 1px;
+	}
+	> .container:nth-child(1){
+		display: flex;
+		justify-content: space-between;
+		// align-content: center;
+		// flex-wrap: wrap;
+		.footer-section{
+			&:nth-child(1){ width: 15%; margin-right: 15px;}
+			&:nth-child(2){ width: 34%; margin-right: 15px;}
+			&:nth-child(3){ width: 30%; margin-right: 15px;}
+			&:nth-child(4){ width: 21%;}
+		}
+		.siteMap{
+			ul{
+				height: 125px;
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: space-araound;
+				li{
+					// margin-right: 60px;
+				}
+			}
+		}
+		.alexRed{
+			font-size: 0.85rem;
+			color: #999999;
+		}
+		
+	}
+	> .container:nth-child(2){
+		margin-top: 80px;
+		padding-top: 50px;
+		border-top: 3px solid #4b4b4b;
+		ul{
+			display: flex;
+			justify-content: space-around;
+			li{
+				color: #999999;
+				text-transform: uppercase;
+				font-size: 0.8rem;
+				letter-spacing: 1px;
+				font-family: $fontFamilySans;
+				font-weight: bold;	
+			}
+		}
+		.copyright{
+			color: #303030;
+			text-align: center;
+			p, a{
+				margin: 40px 10px;
+				display: inline-block;
+				font-size: 0.8rem;
+				color: #303030;
+			}
+		}
+	}
+	ul{
+		list-style: none;
+		margin:0;
+	}
+}

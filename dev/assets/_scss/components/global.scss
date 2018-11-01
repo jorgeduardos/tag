@@ -14,13 +14,13 @@ html{
 	overflow-x:hidden;
 	font-size:23px;
 	@media (max-width: 1024px) {
-		font-size: 20px;
-	}
-	@media (max-width: 640px) {
 		font-size: 18px;
 	}
-	@media (max-width: 320px) {
+	@media (max-width: 640px) {
 		font-size: 15px;
+	}
+	@media (max-width: 320px) {
+		font-size: 14px;
 	}
 }
 
@@ -59,12 +59,16 @@ section{
 .container{
 	padding-left: $sectionPadding;
 	padding-right: $sectionPadding;
-	@media (max-width: 640px) {
-		padding-left: $sectionPadding - 1rem;
-		padding-right: $sectionPadding - 1rem;
+	@media (max-width: 1024px) {
+		padding-left: $sectionPadding - 2rem;
+		padding-right: $sectionPadding - 2rem;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 640px) {
 		padding-left: $sectionPadding - 3rem;
 		padding-right: $sectionPadding - 3rem;
+	}
+	@media (max-width: 500px) {
+		padding-left: $sectionPadding - 4rem;
+		padding-right: $sectionPadding - 4rem;
 	}
 }

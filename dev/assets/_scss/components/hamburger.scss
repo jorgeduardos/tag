@@ -1,0 +1,122 @@
+// hamburger
+  //hamburger variables
+$color: #FFFFFE;
+$btnRight: 3rem;
+$btnTop: 2.3rem;
+
+$iconHeight: 3px;
+$iconWidth: 17px;
+
+$icon-beforeHeight: 3px;
+$icon-beforeWidth: 17px;
+$icon-beforeTop: -10px;
+
+$icon-afterHeight: 3px;
+$icon-afterWidth: 17px;
+$icon-afterTop: 10px;
+
+
+.btn1{
+  position: fixed;
+  z-index: 999;
+  width: 34px;
+  height: 25px;
+  top: $btnTop;
+  right: $btnRight;
+  transition-duration: 0.5s;
+  
+  .icon-left {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: $iconHeight;
+    width: $iconWidth;
+    top: 11px;
+  background-color: $color;
+    left: 0px; 
+    
+    &:before{
+      transition-duration: 0.5s;
+      position: absolute;
+      width: $icon-beforeWidth;
+      height: $icon-beforeHeight;
+      background-color: $color;
+      content: "";
+      top: $icon-beforeTop;
+    }
+    
+    &:after{
+      transition-duration: 0.5s;
+      position: absolute;
+      width: $icon-afterWidth;
+      height: $icon-afterHeight;
+      background-color: $color;
+      content: "";
+      top: $icon-afterTop;
+    }
+    
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
+  .icon-right {
+    transition-duration: 0.5s;
+  position: absolute;
+  height: $iconHeight;
+  width: $iconWidth;
+  top: 11px;
+  background-color: $color;
+    left: 17px;
+    
+    &:before{
+      transition-duration: 0.5s;
+    position: absolute;
+    width: $icon-beforeWidth;
+    height: $icon-beforeHeight;
+    background-color: $color;
+    content: "";
+    top: $icon-beforeTop;
+    }
+    
+    &:after{
+      transition-duration: 0.5s;
+    position: absolute;
+    width: $icon-afterWidth;
+    height: $icon-afterHeight;
+    background-color: $color;
+    content: "";
+    top: $icon-afterTop;
+    }
+  }
+  
+  &.open {
+    .icon-left {
+      transition-duration: 0.5s;
+      background: transparent;
+      
+      &:before{
+        transform: rotateZ(45deg) scaleX(1) translate(5px, 1.5px);
+      }
+
+      &:after{
+        transform: rotateZ(-45deg) scaleX(1) translate(5px, -1.5px);
+      }
+    }
+    
+    .icon-right {
+      transition-duration: 0.5s;
+      background: transparent;  
+      
+      &:before{
+        transform: rotateZ(-45deg) scaleX(1) translate(-5px, 1.5px);
+      }
+
+      &:after{
+        transform: rotateZ(45deg) scaleX(1) translate(-5px, -1.5px);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

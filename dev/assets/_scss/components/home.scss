@@ -1,3 +1,17 @@
+@mixin box($maxWidth, $height, $justifyContent){
+	display: flex;
+	flex-direction: column;
+	justify-content: $justifyContent;
+	width: 100%;
+	max-width: $maxWidth;
+	height: $height;
+	@media (max-width: 1024px) {
+		height: 300px;
+		width: 300px;
+	}
+}
+
+
 /********************* HERO ***********************/
 
 .hero{
@@ -21,6 +35,11 @@
 		padding-left: $sectionPadding;
 		display: flex;
 		align-items: center;
+		img{
+			width: 257px;
+			height: 89px;
+			max-width: none;
+		}
 	}
 	.text{
 		padding: $sectionPadding;
@@ -98,20 +117,11 @@
 
 	}
 	.about-item{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		@include box(400px, 400px, center);
 		margin: 25px 25px 25px 0;
-		width: 100%;
-		max-width: 400px;
-		height: 400px;
 		border: 2px solid red;
 		text-align: center;
 		color: $grayHeader;
-		@media (max-width: 1024px) {
-			height: 300px;
-			width: 300px;
-		}
 		.number{
 			display: block;
 			font-size: 2.8rem;
@@ -160,7 +170,9 @@
 .searches{
 	text-align: center;
 	h2{
+		text-transform: uppercase;
 		color: $blueHeader;
+		font-size: 2.2rem;
 	}
 	.sliderSearch{
 		margin-top: 50px;
@@ -205,22 +217,22 @@
 	margin-top: $sectionMargin + 6rem;
 	margin-bottom: $sectionMargin + 6rem;
 	> .container{
-		height: 500px;
+		// height: 500px;
 		background-color: #ebebeb;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
 		position: relative;
     	transform: rotate(0deg);
 	}
-	.slider-container, .picture-container{
- 		width: 50%;
-	}
 	.picture-container{
 		position: relative;
+		width: 50%;
 		img{
 			box-shadow: 0 0 10px 1px #d8d7d7; 
 			position: absolute;
-			height: 700px;
+			max-height: 700px;
 			width: auto;
 			top: 0;
 			left: 0;
@@ -230,7 +242,9 @@
 		}
 	}
 	.slider-container{
-		padding-left: 50px;
+		padding: 80px 0 80px 50px;
+		max-width: 775px;
+		width: 50%;
 		h4{
 			color: #22a9de;
 			font-size: 1.2rem;
@@ -241,15 +255,11 @@
 			color: $mainFontColor;
 			border: none;
 			font-size: 1.3rem;
-			padding: .5625rem 1.25rem 0 0.5rem;
+			padding: .5625rem 0 0 0.5rem;
+			margin: 0;
 			quotes: "“" "”";
 			line-height: 1.3;
-			@media (max-width: 1024px) {
-				width: 100%;
-			}
-			@media (min-width: 1280px) {
-				width: 95%;
-			}
+			
 		}
 		blockquote:before {
 			font-size: 1.8rem;
@@ -296,6 +306,14 @@
 			}
 		}
 	}
+	@media (max-width: 900px) {
+		.picuture-container, .slider-container{
+			width: 100%;
+		}
+		.picture-container img{
+			position: initial;
+		}
+	}
 }
 
 /********************* INSIGHTS ***********************/
@@ -310,7 +328,7 @@
 			display: inline-block;
 			letter-spacing: 1px;
 			text-transform: uppercase;
-			font-size: 2.1rem;
+			font-size: 2.2rem;
 		}
 		a{
 			margin-right: 26px;
@@ -352,16 +370,9 @@
 
 	}
 	.insights-item{
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		// margin: 25px 25px 25px 0;
+		@include box(400px, 400px, space-between)
 		margin: 15px 15px 15px 0;
 		padding: 45px;
-		width: 100%;
-		max-width: 400px;
-		height: 400px;
-		// border: 2px solid red;
 		text-align: left;
 		color: $grayHeader;
 		position: relative;

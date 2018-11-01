@@ -23,8 +23,12 @@
 </head>
 <body>
 	{% include 'nav.html' %}
+
 	{% block content %}
     {% endblock %}
+
+    {% include 'footer.html' %}
+    
 	<script {%if siteUrl %} src="{{alias('@assetBasePath')}}/js/main.js" {% else %} src="../web/assets/js/main.js"{% endif %}></script>
 </body>
 </html>

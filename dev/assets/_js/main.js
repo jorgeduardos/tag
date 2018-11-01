@@ -11,6 +11,17 @@ import countUp from 'countup.js';
 
 $(document).foundation()
 
+// nav
+
+var nav = $('.main-nav');
+$('.menu').click (function(){
+  $(this).toggleClass('open')
+  nav.hasClass('open') ? (nav.addClass('close'),nav.removeClass('open')) : (nav.addClass('open'),nav.removeClass('close'));
+
+});
+
+//sliders
+
 $('#sliderSearch').slick({
   centerMode: true,
   arrows: true,
@@ -64,12 +75,14 @@ var options2 = {
   suffix: '%'  
 };
 
+// countup numbers
+
 var number1 = document.getElementById("aboutItem1");
 var number2 = document.getElementById("aboutItem2");
 var number3 = document.getElementById("aboutItem3");
 
-var first = new countUp(number1, 0, 35, 0, 4, options);
-var second = new countUp(number2, 0, 4000, 0, 5, options);
+var first = new countUp(number1, 0, 35, 0, 3, options);
+var second = new countUp(number2, 0, 4000, 0, 4, options);
 var third = new countUp(number3, 0, 85, 0, 4, options2);
 
 if (!first.error) {
